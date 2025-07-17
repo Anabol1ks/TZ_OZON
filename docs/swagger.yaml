@@ -1,0 +1,34 @@
+info:
+  contact: {}
+  title: TZ_OZON API
+  version: "1.0"
+paths:
+  /scripts/XML_daily.asp:
+    get:
+      description: Мокаем ответ от ЦБ РФ на конкретную дату
+      parameters:
+      - description: Дата в формате dd/mm/yyyy
+        example: 02/03/2023
+        in: query
+        name: date_req
+        required: true
+        type: string
+      produces:
+      - text/xml
+      responses:
+        "200":
+          description: Успешный XML ответ
+          schema:
+            type: string
+        "400":
+          description: Некорректный запрос
+          schema:
+            type: string
+        "500":
+          description: Внутренняя ошибка
+          schema:
+            type: string
+      summary: Получить курс валют
+      tags:
+      - exchange
+swagger: "2.0"

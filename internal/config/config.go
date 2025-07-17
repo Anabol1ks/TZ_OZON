@@ -19,8 +19,8 @@ type DBConfig struct {
 	Name     string
 }
 
-func Load(log *zap.Logger) *Config {
-	if err := godotenv.Load(); err != nil {
+func Load(log *zap.Logger, env string) *Config {
+	if err := godotenv.Load(env); err != nil {
 		log.Warn("No .env file found, using system env")
 	}
 
