@@ -1,5 +1,15 @@
 services:
-  
+  ozon-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - ozon-db
+
   ozon-db:
     image: postgres:17
     environment:

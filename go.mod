@@ -1,6 +1,6 @@
 module tz_ozon
 
-go 1.24.4
+go 1.24.0
 
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
