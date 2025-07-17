@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package exchange;
+
+option go_package = "tz_ozon/pkg/pb/exchangepb";
+
+import "google/protobuf/timestamp.proto";
+
+service ExchangeService {
+  rpc GetExchangeRate (ExchangeRateRequest) returns (ExchangeRateResponse);
+}
+
+message ExchangeRateRequest {
+  string date_req = 1; 
+}
+
+message ExchangeRateResponse {
+  string xml = 1;
+  google.protobuf.Timestamp date = 2;
+}
