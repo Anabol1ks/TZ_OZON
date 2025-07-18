@@ -9,3 +9,6 @@ run:
 
 test:
 	go test internal/handler/exchange_test.go
+
+e2e:
+	go test ./test/e2e/ -parallel 20 -count=1
